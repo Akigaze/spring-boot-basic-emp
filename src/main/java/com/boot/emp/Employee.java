@@ -1,4 +1,4 @@
-package java.com.boot.Employee;
+package com.boot.emp;
 
 public class Employee {
     private int id;
