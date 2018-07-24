@@ -1,10 +1,7 @@
 package com.boot.emp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +19,10 @@ public class EmployeeController {
     @GetMapping("/emp/{id}")
     public Employee selectById(@PathVariable int id){
         return employeeService.getEmpById(id);
+    }
+
+    @PostMapping("/emp")
+    public void update(@RequestBody Employee emp){
+        employeeService.updateEmp(emp);
     }
 }
