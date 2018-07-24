@@ -1,23 +1,25 @@
 package com.boot.emp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class EmployeeController {
 
-    private List<Employee> emps;
+    private EmployeeService employeeService;
 
-    {
-        emps.add(new Employee(1,"Mark",12,"man"));
-        emps.add(new Employee(2,"Jane",10,"woman"));
-
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
-    @GetMapping("/emp")
-    public List<Employee> selectAll(){
-        return this.emps;
+    @GetMapping("/emp/{id}")
+    public List<Employee> selectEmp(@PathVariable(value = "*") String id){
+        return employeeService.getEmpById(id);
     }
 }
