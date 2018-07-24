@@ -15,6 +15,11 @@ public class EmployeeService {
 
     }
 
+    public EmployeeService() {
+
+    }
+
+
     public EmployeeService(List<Employee> emps) {
         this.emps = emps;
     }
@@ -27,7 +32,11 @@ public class EmployeeService {
         this.emps = emps;
     }
 
-    public List<Employee> getEmpById(String s) {
+    public List<Employee> getEmpById() {
+        return this.emps;
+    }
+
+    public List<Employee> getEmpList() {
         return this.emps;
     }
 }

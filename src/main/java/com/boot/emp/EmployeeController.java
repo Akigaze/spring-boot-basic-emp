@@ -12,14 +12,10 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    private EmployeeService employeeService=new EmployeeService();
 
-    public void setEmployeeService(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
-
-    @GetMapping("/emp/{id}")
-    public List<Employee> selectEmp(@PathVariable(value = "*") String id){
-        return employeeService.getEmpById(id);
+    @GetMapping("/emp")
+    public List<Employee> selectAll(){
+        return employeeService.getEmpList();
     }
 }
