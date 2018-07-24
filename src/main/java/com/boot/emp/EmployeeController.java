@@ -25,4 +25,9 @@ public class EmployeeController {
     public void update(@RequestBody Employee emp){
         employeeService.updateEmp(emp);
     }
+
+    @PatchMapping("/emp")
+    public void addEmp(@RequestBody Employee emp){
+        employeeService.add(emp);
+    }
 }

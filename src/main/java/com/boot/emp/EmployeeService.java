@@ -41,11 +41,13 @@ public class EmployeeService {
     }
 
     public void updateEmp(Employee emp) {
-        emps.stream().forEach(employee-> System.out.println(employee));
         Employee e=getEmpById(emp.getId());
         e.setAge(emp.getAge());
         e.setName(emp.getName());
         e.setGender(emp.getGender());
-        emps.stream().forEach(employee-> System.out.println(employee));
+    }
+
+    public void add(Employee emp) {
+        emps.add(emp);
     }
 }
