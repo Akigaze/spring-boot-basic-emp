@@ -12,7 +12,8 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-    private EmployeeService employeeService=new EmployeeService();
+    @Autowired
+    private EmployeeService employeeService;
 
     @GetMapping("/emp")
     public List<Employee> selectAll(){
@@ -20,7 +21,6 @@ public class EmployeeController {
     }
     @GetMapping("/emp/{id}")
     public Employee selectById(@PathVariable int id){
-        System.out.println(id);
         return employeeService.getEmpById(id);
     }
 }
