@@ -30,4 +30,8 @@ public class EmployeeController {
     public void addEmp(@RequestBody Employee emp){
         employeeService.add(emp);
     }
+    @DeleteMapping("/emp")
+    public void deleteEmp(@RequestBody int id){
+        employeeService.deleteById(id);
+    }
 }

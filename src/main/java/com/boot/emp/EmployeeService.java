@@ -50,4 +50,9 @@ public class EmployeeService {
     public void add(Employee emp) {
         emps.add(emp);
     }
+
+    public void deleteById(int id) {
+        Employee emp=emps.stream().filter(e->e.getId()==id).findFirst().get();
+        emps.remove(emp);
+    }
 }
