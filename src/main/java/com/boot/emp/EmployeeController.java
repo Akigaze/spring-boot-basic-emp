@@ -18,4 +18,9 @@ public class EmployeeController {
     public List<Employee> selectAll(){
         return employeeService.getEmpList();
     }
+    @GetMapping("/emp/{id}")
+    public Employee selectById(@PathVariable int id){
+        System.out.println(id);
+        return employeeService.getEmpById(id);
+    }
 }

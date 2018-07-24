@@ -1,8 +1,5 @@
 package com.boot.emp;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +29,8 @@ public class EmployeeService {
         this.emps = emps;
     }
 
-    public List<Employee> getEmpById() {
-        return this.emps;
+    public Employee getEmpById(int id) {
+        return this.emps.stream().filter(emp->emp.getId()==id).findFirst().get();
     }
 
     public List<Employee> getEmpList() {
